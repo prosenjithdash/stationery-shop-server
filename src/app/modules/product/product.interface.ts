@@ -3,7 +3,7 @@ export interface IProduct {
   name: string
   brand: string
   price: number
-  category: 'writing' | 'office supplies' | 'art supplies'| 'Educational' | 'Technology'
+  category: 'Writing' | 'Office Supplies' | 'Art Supplies'| 'Educational' | 'Technology'
   description: string
   quantity: number
   inStock: number

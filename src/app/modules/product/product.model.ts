@@ -25,7 +25,7 @@ import { IProduct } from './product.interface'
   },
   category: {
      type: String,
-      enum: ['writing' , 'office supplies' ,'art supplies', 'Educational' , 'Technology'],
+      enum: ['Writing' , 'Office Supplies' ,'Art Supplies', 'Educational' , 'Technology'],
     //   default: 'writing',
   },
   description: {

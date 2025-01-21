@@ -11,7 +11,7 @@ app.use(express.json())
 app.use(cors())
 
 // application routes
-app.use('/api/products',ProductRoutes)
+app.use('/api',ProductRoutes)
 
 
 
