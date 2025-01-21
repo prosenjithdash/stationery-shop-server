@@ -7,8 +7,8 @@ export interface IProduct {
   description: string
   quantity: number
   inStock: number
-  
 }
+
 
 
 //  (string): The name of the product (e.g., Pen, Notebook, Eraser).

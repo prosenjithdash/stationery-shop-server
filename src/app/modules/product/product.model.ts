@@ -10,7 +10,7 @@ import { IProduct } from './product.interface'
 //   quantity: number
 //   inStock: number
   
-const productSchema = new Schema<IProduct>({
+ const productSchema = new Schema<IProduct>({
   name: {
     type: String,
     required: true,
@@ -26,7 +26,7 @@ const productSchema = new Schema<IProduct>({
   category: {
      type: String,
       enum: ['writing' , 'office supplies' ,'art supplies', 'Educational' , 'Technology'],
-    //   default: 'pending',
+    //   default: 'writing',
   },
   description: {
     type: String,
