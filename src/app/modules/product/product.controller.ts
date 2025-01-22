@@ -19,7 +19,12 @@ const createProduct = async (req: Request, res: Response) => {
 
     })
     } catch (error) {
-        console.log(error)
+         res.status(500).json({
+        message: "Something went wrong.",
+        success: false,
+        error: error
+
+    })
     }
     
 
@@ -41,7 +46,12 @@ const getAllProducts = async (req: Request, res: Response) => {
 
     })
     } catch (error) {
-        console.log(error)
+         res.status(500).json({
+        message: "Something went wrong.",
+        success: false,
+        error: error
+
+    })
     }
     
 
@@ -52,7 +62,7 @@ const getAllProducts = async (req: Request, res: Response) => {
 const getSingleProduct = async (req: Request, res: Response) => {
 
     try {
-        
+
         const { productId } = req.params;
     // will call service func to send this data
         const result = await ProductServices.getSingleProductIntoDB(productId);
@@ -61,11 +71,16 @@ const getSingleProduct = async (req: Request, res: Response) => {
     res.status(200).json({
         message: "Products retrieved successfully",
         success: true,
-        data: result
+        data: result 
 
     })
     } catch (error) {
-        console.log(error)
+         res.status(500).json({
+        message: "Something went wrong.",
+        success: false,
+        error: error
+
+    })
     }
     
 
