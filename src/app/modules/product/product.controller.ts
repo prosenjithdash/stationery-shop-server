@@ -1,6 +1,8 @@
 import { Request, Response } from "express";
 import { ProductServices } from "./product.service";
 
+
+// Create Product
 const createProduct = async (req: Request, res: Response) => {
 
     try {
@@ -21,8 +23,57 @@ const createProduct = async (req: Request, res: Response) => {
     }
     
 
+}
+ 
+// Get all products
+const getAllProducts = async (req: Request, res: Response) => {
+
+    try {
+
+    // will call service func to send this data
+        const result = await ProductServices.getAllProductsIntoDB();
+    
+    // send response
+    res.status(200).json({
+        message: "Products retrieved successfully",
+        success: true,
+        data: result
+
+    })
+    } catch (error) {
+        console.log(error)
+    }
+    
+
  }
 
+ 
+ // Get single products
+const getSingleProduct = async (req: Request, res: Response) => {
+
+    try {
+        
+        const { productId } = req.params;
+    // will call service func to send this data
+        const result = await ProductServices.getSingleProductIntoDB(productId);
+    
+    // send response
+    res.status(200).json({
+        message: "Products retrieved successfully",
+        success: true,
+        data: result
+
+    })
+    } catch (error) {
+        console.log(error)
+    }
+    
+
+ }
+
+
 export const ProductControllers = {
-     createProduct,
+    createProduct,
+    getAllProducts,
+    getSingleProduct,
  }

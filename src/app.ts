@@ -11,7 +11,12 @@ app.use(express.json())
 app.use(cors())
 
 // application routes
-app.use('/api',ProductRoutes)
+
+// For create Product
+app.use('/api/products', ProductRoutes)
+
+// For get all Products
+app.use('/api/products',ProductRoutes)
 
 
 
