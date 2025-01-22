@@ -9,5 +9,7 @@ const router = express.Router()
 router.post('/', ProductControllers.createProduct)
 // For get all products
 router.get('/', ProductControllers.getAllProducts)
+// For get single product
+router.get('/:productId', ProductControllers.getSingleProduct)
 
 export const ProductRoutes = router;
