@@ -11,5 +11,7 @@ router.post('/', ProductControllers.createProduct)
 router.get('/', ProductControllers.getAllProducts)
 // For get single product
 router.get('/:productId', ProductControllers.getSingleProduct)
+// For delete single product
+router.delete('/:productId', ProductControllers.deleteProduct)
 
 export const ProductRoutes = router;

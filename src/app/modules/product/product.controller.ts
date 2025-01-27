@@ -71,7 +71,7 @@ const getSingleProduct = async (req: Request, res: Response) => {
     res.status(200).json({
         message: "Products retrieved successfully",
         success: true,
-        data: result 
+        data: result
 
     })
     } catch (error) {
@@ -86,9 +86,38 @@ const getSingleProduct = async (req: Request, res: Response) => {
 
  }
 
+  
+ // delete products
+const deleteProduct = async (req: Request, res: Response) => {
+
+    try {
+
+        const { productId } = req.params;
+    // will call service func to send this data
+        const result = await ProductServices.deleteProductFromDB(productId);
+    
+    // send response
+    res.status(200).json({
+        message: "Product deleted successfully",
+        success: true,
+        data: result
+
+    })
+    } catch (error) {
+         res.status(500).json({
+        message: "Something went wrong.",
+        success: false,
+        error: error
+
+    })
+    }
+    
+
+ }
 
 export const ProductControllers = {
     createProduct,
     getAllProducts,
     getSingleProduct,
+    deleteProduct
  }
