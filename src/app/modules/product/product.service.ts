@@ -30,6 +30,7 @@ const deleteProductFromDB = async (_id:string) => {
     const result = await Product.updateOne({_id},{isDeleted:true});
     return result;
 }
+
 export const ProductServices = {
     createProductIntoDB,
     getAllProductsIntoDB,
