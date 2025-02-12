@@ -11,7 +11,7 @@ const createProductIntoDB = async (product: IProduct) => {
 
 
 // For get all Products
-const getAllProductsIntoDB = async () => {
+const getAllProductsFromDB = async () => {
     
     const result = await Product.find();
     return result;
@@ -19,7 +19,7 @@ const getAllProductsIntoDB = async () => {
 
 
 // For get single Product
-const getSingleProductIntoDB = async (_id:string) => {
+const getSingleProductFromDB = async (_id:string) => {
     const result = await Product.findOne({_id});
     return result;
 }
@@ -33,7 +33,7 @@ const deleteProductFromDB = async (_id:string) => {
 
 export const ProductServices = {
     createProductIntoDB,
-    getAllProductsIntoDB,
-    getSingleProductIntoDB,
+    getAllProductsFromDB,
+    getSingleProductFromDB,
     deleteProductFromDB
 }

@@ -36,7 +36,7 @@ const getAllProducts = async (req: Request, res: Response) => {
     try {
 
     // will call service func to send this data
-        const result = await ProductServices.getAllProductsIntoDB();
+        const result = await ProductServices.getAllProductsFromDB();
     
     // send response
     res.status(200).json({
@@ -65,7 +65,7 @@ const getSingleProduct = async (req: Request, res: Response) => {
 
         const { productId } = req.params;
     // will call service func to send this data
-        const result = await ProductServices.getSingleProductIntoDB(productId);
+        const result = await ProductServices.getSingleProductFromDB(productId);
     
     // send response
     res.status(200).json({
