@@ -89,6 +89,6 @@ import { IProduct } from './product.interface'
 //   }
 // )
 
-const Product = model<IProduct>('Product', productSchema)
+export const Product = model<IProduct>('Product', productSchema)
 
-export default Product
+
